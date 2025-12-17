@@ -8,7 +8,7 @@ public class PatientList {
 
         public Node(Patient patient) {
             this.patient = patient;
-            this.next = null; // Next is null
+            this.next = null;
         }
     }
     public void addPatient(Patient p) { // Method to add new patient to the end
