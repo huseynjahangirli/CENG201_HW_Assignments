@@ -22,7 +22,7 @@ public class PatientListTest {
         System.out.println("---Searching For Patient (ID: 13)");
         Patient p = patientList.findPatient(13);
 
-        if (p != null) { // Check the patient (find or not find)
+        if (p != null) {
             System.out.println("---Patient Found: " + p.name);
         }
         else {
