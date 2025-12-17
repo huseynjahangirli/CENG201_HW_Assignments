@@ -1,15 +1,15 @@
 public class Patient {
 
-    int id; // ID for patient
-    String name; // Patients full names
+    int id;
+    String name;
     int severity; // Severity level of the illness (1-10)
-    int age; // Patients ages
+    int age;
 
     // Constructor to patient details
     public Patient(int id, String name, int severity, int age) {
-        this.id = id; // Set patient ID
-        this.name = name; // Set name
-        this.severity = severity; // Set severity level
-        this.age = age; // Set age
+        this.id = id;
+        this.name = name;
+        this.severity = severity;
+        this.age = age;
     }
 }
