@@ -25,18 +25,18 @@ public class PatientList {
         }
     }
     public void removePatient(int id) { // Method to remove patient by ID
-        if (head == null) { // If list is empty
+        if (head == null) {
             System.out.println("Patient list is empty");
             return;
         }
         if (head.patient.id == id) { // If the patient to remove is the head
-            head = head.next; // Move head to the next node
+            head = head.next;
             System.out.println(id + " has been removed");
             return;
         }
         Node current = head;
-        // Search for the patient
-        while (current.next != null && current.next.patient.id != id) {
+
+        while (current.next != null && current.next.patient.id != id) { // Search for the patient
             current = current.next;
         }
         if (current.next == null) { // If we didn't find the ID
@@ -49,7 +49,7 @@ public class PatientList {
     }
     public Patient findPatient(int id) { // Method to find and return patient
         Node current = head;
-        // Traverse the list
+
         while (current != null) {
             if (current.patient.id == id) {
                 return current.patient; // Found the patient
