@@ -1,50 +1,58 @@
 public class DischargeStack {
 
-    private Node top;
+    private StackNode stackTop;
 
-    private class Node { // Inner class for stack node
-        DischargeRecord record;
-        Node next;
+    private class StackNode { // Hold data
+        DischargeRecord data;
+        StackNode next;
 
-        public Node(DischargeRecord record) {
-            this.record = record;
+        public StackNode(DischargeRecord data) {
+            this.data = data;
             this.next = null;
         }
     }
 
-    public void push(DischargeRecord record) { // Method to add record to the top (Push)
-        Node newNode = new Node(record);
-        newNode.next = top;
-        top = newNode;
+    public boolean isStackEmpty() { // The method to check if stack is empty
+        return stackTop == null;
     }
 
-    public DischargeRecord pop() { // Method to remove the top record (Pop)
-        if (top == null) {
-            System.out.println("Stack is empty.");
+    public void push(DischargeRecord record) { // Add the top (LIFO logic)
+        StackNode newNode = new StackNode(record);
+        if (isStackEmpty()) { // If stack is empty, this is first element
+            stackTop = newNode;
+        }
+        else {
+            newNode.next = stackTop;
+            stackTop = newNode;
+        }
+    }
+
+    public DischargeRecord pop() { // Removing the top element
+        if (isStackEmpty()) {
+            System.out.println("Warning: The stack is empty, cannot pop.");
             return null;
         }
-        DischargeRecord temp = top.record; // Save the top data
-        top = top.next;
-        return temp;
+        DischargeRecord itemToReturn = stackTop.data; // Save data to return it later
+        stackTop = stackTop.next;
+        return itemToReturn;
     }
 
-    public DischargeRecord peek() { // Method to check the top record without removing (Peek)
-        if (top == null) {
+    public DischargeRecord peek() { // Just look at the top without removing
+        if (isStackEmpty()) {
             return null;
         }
-        return top.record;
+        return stackTop.data;
     }
 
-    public void printStack() { // Method to print all discharge records
-        if (top == null) {
+    public void printStack() { // Show in the stack
+        if (isStackEmpty()) {
             System.out.println("Stack is empty.");
             return;
         }
-        System.out.println("---Discharge History (Stack)");
-        Node current = top;
-        while (current != null) {
-            System.out.println("Patient ID: " + current.record.patientId + ", Time: " + current.record.dischargeTime);
-            current = current.next;
+        System.out.println("---Discharge History");
+        for (StackNode current = stackTop; current != null; current = current.next) { // Use for loop to traverse
+            System.out.println("Patient ID: " + current.data.patientId +
+                    " | Time: " + current.data.dischargeTime);
         }
     }
 }

@@ -6,7 +6,7 @@ public class TreatmentQueueTest {
 
         System.out.println("Enqueueing Patients (Adding 1 to 8)");
 
-        // We must create 'new TreatmentRequest' objects because our method expects objects, not just ints.
+        // We must create objects because our method expects objects, not just ints
         newQueue.enqueue(new TreatmentRequest(1));
         newQueue.enqueue(new TreatmentRequest(2));
         newQueue.enqueue(new TreatmentRequest(3));
