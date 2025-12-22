@@ -4,7 +4,7 @@ public class DischargeStackTest {
 
         DischargeStack stack = new DischargeStack(); // Create the stack
 
-        System.out.println("---Pushing 5 Discharge Records"); // Add 5 discharge records (Push)
+        System.out.println("---Pushing 5 Discharge Records"); // Add 5 discharge records
 
         stack.push(new DischargeRecord(201));
         stack.push(new DischargeRecord(202));
@@ -14,7 +14,7 @@ public class DischargeStackTest {
 
         stack.printStack();
 
-        System.out.println("---Popping 2 Records (LIFO)"); // 2 records (Pop)
+        System.out.println("---Popping 2 Records"); // 2 records
 
         DischargeRecord r1 = stack.pop();
         if (r1 != null) {

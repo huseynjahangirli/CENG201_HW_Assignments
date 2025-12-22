@@ -1,16 +1,18 @@
 public class TreatmentRequest {
 
-    // The ID of the patient
     int patientId;
-
-    // Arrival time in milliseconds
     long arrivalTime;
+    boolean isEmergency; // New boolean for task 4 priority
 
-    // Constructor to create a new request
-    public TreatmentRequest(int patientId) {
-        this.patientId = patientId;
-
-        // Get current time from system
+    public TreatmentRequest(int id) { // Old constructor (for task 2), It is normal
+        this.patientId = id;
         this.arrivalTime = System.currentTimeMillis();
+        this.isEmergency = false;
+    }
+
+    public TreatmentRequest(int id, boolean urgent) { // New constructor (for task 4), we use this when we have emergency
+        this.patientId = id;
+        this.arrivalTime = System.currentTimeMillis();
+        this.isEmergency = urgent;
     }
 }

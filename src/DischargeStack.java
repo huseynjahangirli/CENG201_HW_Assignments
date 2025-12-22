@@ -16,7 +16,7 @@ public class DischargeStack {
         return stackTop == null;
     }
 
-    public void push(DischargeRecord record) { // Add the top (LIFO logic)
+    public void push(DischargeRecord record) { // Add the top (LIFO)
         StackNode newNode = new StackNode(record);
         if (isStackEmpty()) { // If stack is empty, this is first element
             stackTop = newNode;
@@ -29,7 +29,7 @@ public class DischargeStack {
 
     public DischargeRecord pop() { // Removing the top element
         if (isStackEmpty()) {
-            System.out.println("Warning: The stack is empty, cannot pop.");
+            System.out.println("The stack is empty, cannot pop.");
             return null;
         }
         DischargeRecord itemToReturn = stackTop.data; // Save data to return it later
@@ -37,7 +37,7 @@ public class DischargeStack {
         return itemToReturn;
     }
 
-    public DischargeRecord peek() { // Just look at the top without removing
+    public DischargeRecord peek() {
         if (isStackEmpty()) {
             return null;
         }
@@ -49,10 +49,9 @@ public class DischargeStack {
             System.out.println("Stack is empty.");
             return;
         }
-        System.out.println("---Discharge History");
+        System.out.println("Discharge History");
         for (StackNode current = stackTop; current != null; current = current.next) { // Use for loop to traverse
-            System.out.println("Patient ID: " + current.data.patientId +
-                    " | Time: " + current.data.dischargeTime);
+            System.out.println("Patient ID: " + current.data.patientId + ", Time: " + current.data.dischargeTime);
         }
     }
 }

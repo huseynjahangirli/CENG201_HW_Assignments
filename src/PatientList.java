@@ -70,4 +70,29 @@ public class PatientList {
             current = current.next;
         }
     }
+    // Method For Task 4 Sorting
+    public void sortBySeverity() {
+        if (head == null) return; // Check if list is empty
+        if (head.next == null) return;
+        boolean check;
+
+        do { // Simple bubble sort logic
+            check = false;
+            Node temp = head; // Start from beginning
+
+            while (temp.next != null) {
+
+                if (temp.patient.severity < temp.next.patient.severity) { // if severity is small, swap it
+                    Patient p = temp.patient;
+                    temp.patient = temp.next.patient;
+                    temp.next.patient = p;
+
+                    check = true;
+                }
+                temp = temp.next; // Go to next node
+            }
+        } while (check);
+
+        System.out.println("Sorted by severity.");
+    }
 }

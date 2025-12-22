@@ -4,11 +4,11 @@ public class PatientListTest {
         PatientList patientList = new PatientList(); // Create a new PatientList object
 
         // Add 5 patients to list for testing
-        patientList.addPatient(new Patient(10, "Mehmet Yılmaz", 5, 33));
-        patientList.addPatient(new Patient(11, "Cevdet Yıldırım", 3, 25));
-        patientList.addPatient(new Patient(12, "Mustafa Bakırcı", 7, 41));
-        patientList.addPatient(new Patient(13, "Veysel Çalışkan", 4, 21));
-        patientList.addPatient(new Patient(14, "Harun Çakır", 2, 45));
+        patientList.addPatient(new Patient(10, "Mehmet Yilmaz", 5, 33));
+        patientList.addPatient(new Patient(11, "Cevdet Yildirim", 3, 25));
+        patientList.addPatient(new Patient(12, "Mustafa Bakirci", 7, 41));
+        patientList.addPatient(new Patient(13, "Veysel Caliskan", 4, 21));
+        patientList.addPatient(new Patient(14, "Harun Cakir", 2, 45));
 
         // Print just list
         System.out.println("---Initial List");
