@@ -1,12 +1,12 @@
+// Test class for Task 2
 public class TreatmentQueueTest {
     public static void main(String[] args) {
 
-        // Create the queue instance
+        // Queue example was created.
         TreatmentQueue newQueue = new TreatmentQueue();
 
         System.out.println("Enqueueing Patients (Adding 1 to 8)");
 
-        // We must create objects because our method expects objects, not just ints
         newQueue.enqueue(new TreatmentRequest(1));
         newQueue.enqueue(new TreatmentRequest(2));
         newQueue.enqueue(new TreatmentRequest(3));

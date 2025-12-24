@@ -1,3 +1,4 @@
+// Test class for Task 1
 public class PatientListTest {
     public static void main(String[] args) { // Main method for the test class
 
@@ -11,24 +12,24 @@ public class PatientListTest {
         patientList.addPatient(new Patient(14, "Harun Cakir", 2, 45));
 
         // Print just list
-        System.out.println("---Initial List");
+        System.out.println("Patient List: ");
         patientList.printList();
 
         // Remove a patient with ID
-        System.out.println("---Removing Patient (ID: 12)");
+        System.out.println("Removing Patient: (ID: 12)");
         patientList.removePatient(12);
 
         // Search for a patient with ID
-        System.out.println("---Searching For Patient (ID: 13)");
+        System.out.println("Searching For Patient: (ID: 13)");
         Patient p = patientList.findPatient(13);
 
         if (p != null) {
-            System.out.println("---Patient Found: " + p.name);
+            System.out.println("Patient Found: " + p.name);
         }
         else {
-            System.out.println("---Patient Not Found");
+            System.out.println("Patient Not Found!");
         }
-        System.out.println("---Final List"); // Print the final PatientList
+        System.out.println("Final Patient List: "); // Print the final PatientList
         patientList.printList();
     }
 }

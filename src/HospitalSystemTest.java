@@ -1,3 +1,4 @@
+// Test class for Task 4
 public class HospitalSystemTest {
     public static void main(String[] args) {
 
@@ -6,7 +7,7 @@ public class HospitalSystemTest {
         // 1. Create the system
         HospitalSystem hospital = new HospitalSystem();
 
-        // STEP 1: Add 10 patients to the system
+        // STEP 1: 10 patients were added to the system.
         System.out.println("Registering 10 Patients");
 
         hospital.addPatient(new Patient(101, "Ali Vural", 8, 30));
@@ -20,7 +21,7 @@ public class HospitalSystemTest {
         hospital.addPatient(new Patient(109, "Burak Guc", 6, 45));
         hospital.addPatient(new Patient(110, "Seda Bal", 2, 19));
 
-        // STEP 2: Add 5 Normal and 3 Priority requests
+        // STEP 2: 5 Normal and 3 Priority requests added.
         System.out.println("\n--- Step 2: Adding Treatment Requests (5 Normal, 3 Priority) ---");
 
         // 3 Priority Requests (Urgent)
@@ -35,15 +36,15 @@ public class HospitalSystemTest {
         hospital.addTreatmentRequest(108, false);
         hospital.addTreatmentRequest(109, false);
 
-        // Check the queues before processing
+        // Queues were checked before processing began.
         System.out.println("\n(Current Status: 3 people in Emergency Queue, 5 in Normal Queue)");
 
-        // STEP 3: Add 2 discharge records
+        // STEP 3: 2 discharge records added.
         System.out.println("\n--- Step 3: Adding 2 Manual Discharge Records ---");
         hospital.addDischarge(106);
         hospital.addDischarge(110);
 
-        // STEP 4: Process 4 treatment requests
+        // STEP 4: 4 treatment requests have been processed.
         System.out.println("\n--- Step 4: Processing 4 Requests (Priority First) ---");
 
         // Emergency Queue first.
@@ -53,7 +54,7 @@ public class HospitalSystemTest {
         hospital.processTreatment(); // 3. (Urgent)
         hospital.processTreatment(); // 4. (First Normal)
 
-        // STEP 5: Print the final system state
+        // STEP 5: The system's current status has been printed.
         System.out.println("\n--- Step 5: Final System State ---");
         hospital.printSystemState();
     }

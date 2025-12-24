@@ -10,6 +10,7 @@ public class HospitalSystem {
 
     HashMap<Integer, Patient> patientMap;
 
+    // All data structures are created within the constructor.
     public HospitalSystem() {
         pList = new PatientList();
         normalQ = new TreatmentQueue();
@@ -18,32 +19,32 @@ public class HospitalSystem {
         patientMap = new HashMap<>();
     }
 
-    // 1. Register a new patient
+    // 1. A new patient record has been created.
     public void addPatient(Patient p) {
         pList.addPatient(p);
         patientMap.put(p.id, p);
         System.out.println("Registered: " + p.name + " (ID: " + p.id + ")");
     }
 
-    // 2. Add Treatment Request (Priority)
+    // 2. Priority Treatment Request Added.
     public void addTreatmentRequest(int id, boolean isUrgent) {
 
         if (patientMap.containsKey(id)) { // Check if patient exists in a system
             TreatmentRequest tRequest = new TreatmentRequest(id, isUrgent);
 
             if (isUrgent) {
-                System.out.println(" [URGENT] Adding ID " + id + " to Emergency Queue.");
+                System.out.println("(URGENT) Adding ID " + id + " to Emergency Queue.");
                 emergencyQ.enqueue(tRequest);
             } else {
-                System.out.println(" [Normal] Adding ID " + id + " to Normal Queue.");
+                System.out.println("(Normal) Adding ID " + id + " to Normal Queue.");
                 normalQ.enqueue(tRequest);
             }
         } else {
-            System.out.println("Error: Patient ID " + id + " not found!");
+            System.out.println("Patient ID: " + id + " not found!");
         }
     }
 
-    // 3. Emergency First logic
+    // 3. Emergency Priority.
     public void processTreatment() {
         TreatmentRequest tRequest = null;
 
@@ -64,20 +65,20 @@ public class HospitalSystem {
         }
     }
 
-    // 4. Manual Discharge (Required for Test Scenario)
+    // 4. Manual Discharge required for test scenario.
     public void addDischarge(int patientId) {
         DischargeRecord rec = new DischargeRecord(patientId);
         stack.push(rec);
         System.out.println("Discharge Record added for ID: " + patientId);
     }
 
-    // 5. Sort Patients (Task 4 Sorting)
+    // 5. Patients were sorted. (Task 4 Sorting)
     public void sortPatients() {
         System.out.println("Sorting patients by severity:");
         pList.sortBySeverity();
     }
 
-    // 6. Print System State
+    // 6. System Status Printed.
     public void printSystemState() {
         System.out.println("\nHOSPITAL SYSTEM DASHBOARD");
 

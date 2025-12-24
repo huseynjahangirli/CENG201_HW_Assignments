@@ -2,7 +2,7 @@ public class DischargeStack {
 
     private StackNode stackTop;
 
-    private class StackNode { // Hold data
+    private class StackNode { // This Node holds the data
         DischargeRecord data;
         StackNode next;
 

@@ -1,3 +1,4 @@
+// This class was created to keep a list of patients in a linked list format.
 public class PatientList {
 
     private Node head; // Head node the linked list
@@ -11,7 +12,8 @@ public class PatientList {
             this.next = null;
         }
     }
-    public void addPatient(Patient p) { // Method to add new patient to the end
+    // This method is for adding a new patient to the patient list.
+    public void addPatient(Patient p) {
         Node newNode = new Node(p);
         if (head == null) {
             head = newNode;
@@ -24,7 +26,8 @@ public class PatientList {
             current.next = newNode;
         }
     }
-    public void removePatient(int id) { // Method to remove patient by ID
+    // This method was created to remove a patient from the patient list using their identification number.
+    public void removePatient(int id) {
         if (head == null) {
             System.out.println("Patient list is empty");
             return;
@@ -47,7 +50,8 @@ public class PatientList {
             System.out.println(id + " has been removed");
         }
     }
-    public Patient findPatient(int id) { // Method to find and return patient
+    // It was created to locate the patient using their identification information.
+    public Patient findPatient(int id) {
         Node current = head;
 
         while (current != null) {
@@ -58,7 +62,8 @@ public class PatientList {
         }
         return null;
     }
-    public void printList() { // Method the print all patients
+    // Method the print all patients
+    public void printList() {
         Node current = head;
         if (current == null) {
             System.out.println("Patient list is empty");
